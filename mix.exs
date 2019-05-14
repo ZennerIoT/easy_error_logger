@@ -9,7 +9,7 @@ defmodule EasyErrorLogger.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
-      source_url:
+      source_url: "https://github.com/ZennerIoT/easy_error_logger/tree/master/"
     ]
   end
 
@@ -23,15 +23,16 @@ defmodule EasyErrorLogger.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
   def package() do
     [
-      name: "EasyErrorLogger",
+      name: "easy_error_logger",
       licenses: ["MIT"],
+      description: "Makes logging of caught, rescued and unmatched errors easier.",
+      maintainers: ["Moritz Schmale <ms@zenner-iot.com>"],
       links: %{
         GitHub: "https://github.com/ZennerIoT/easy_error_logger"
       }

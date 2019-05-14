@@ -1,6 +1,6 @@
 # EasyErrorLogger
 
-Makes logging caught, rescued and unmatched errors easier.
+Makes logging of caught, rescued and unmatched errors easier.
 
 In Elixir, the way to get beatiful error messages with a well-formatted stack trace 
 isn't as straightforward as in other languages, where a single line is often enough
@@ -27,7 +27,7 @@ import ErrorLogger
 try do
   handle_foo!()
 catch 
-  e -> log_error("I really tried, but this error occurred:", e)
+  e -> log_message_and_error("I really tried, but this error occurred:", e)
 end
 ```
 
@@ -49,7 +49,7 @@ tuple:
 ```elixir
 case handle_foo() do
   :ok -> :ok
-  {:error, error} -> log_error("This didn't work:", error)
+  {:error, error} -> log_message_and_error("This didn't work:", error)
 end
 ```
 
