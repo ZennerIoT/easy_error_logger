@@ -22,4 +22,8 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 easy_error_logger-*.tar
 
+# Elixir LS cache
 /.elixir_ls
+
+# any stray beam file
+*.beam
