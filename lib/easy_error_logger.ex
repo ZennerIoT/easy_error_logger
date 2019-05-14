@@ -29,7 +29,7 @@ defmodule ErrorLogger do
   """
   defmacro log_message_and_error(message, error, log_level \\ :error, metadata \\ []) do
     quote bind_quoted: [message: message, error: error, log_level: log_level, metadata: metadata] do
-      log_error_raw(message, error, :error, log_level, metadata)
+      log_error_raw(message, :error, error, log_level, metadata)
     end
   end
 
