@@ -52,7 +52,7 @@ defmodule ErrorLogger do
   @doc """
   Formats and logs the given `error` of the given `kind` with an optional preceding `message`.
   """
-  defmacro log_error_raw(message, kind, error, log_level, metadata) do
+  defmacro log_error_raw(message, kind, error, log_level \\ :error, metadata \\ []) do
     quote do
       unquote(error)
       |> unquote(__MODULE__).format_error(unquote(kind))
